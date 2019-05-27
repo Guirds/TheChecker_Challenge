@@ -3,9 +3,11 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
+import Home from "./pages/home";
+
 const App = () => (
   <Provider store={store}>
-    <h1>Hello world</h1>;
+    <Home />
   </Provider>
 );
 export default App;
