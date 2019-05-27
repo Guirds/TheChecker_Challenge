@@ -1,13 +1,18 @@
 import React from 'react';
 
-import Header from '../../components/header';
-
-import { Container, CardLogin, Login } from './styles';
+import {
+  Container, CardLogin, Login, Nav,
+} from './styles';
 
 const Home = () => (
   <>
     <Container>
-      <Header />
+      <Nav>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Sign in</a>
+        <a href="">Login</a>
+      </Nav>
 
       <CardLogin>
         <Login>
