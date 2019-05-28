@@ -4,7 +4,17 @@
       "id": 1,
       "avatar_url": "https://avatars3.githubusercontent.com/u/37129994?v=4",
       "name": "Guilherme Santos",
-      "bio": "Apaixonado por JS, me dedico integralmente a estudar e aprender cada vez mais sobre as tecnologias Node.js, React e React Native",
+      "bio": "Node.js, React e React Native",
+      "location": "Brasil, São José-SC",
+      "public_repos": 22,
+      "followers": 4,
+      "following": 5
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://avatars3.githubusercontent.com/u/37129994?v=4",
+      "name": "Pedro augusto",
+      "bio": "Node.js, React e React Native",
       "location": "Brasil, São José-SC",
       "public_repos": 22,
       "followers": 4,

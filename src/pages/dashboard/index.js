@@ -23,32 +23,34 @@ class Dashboard extends Component {
           <a href="/">Exit</a>
         </Nav>
 
-        <Repository>
-          <HeaderRepository>
-            <img src="https://avatars3.githubusercontent.com/u/37129994?v=4" alt="Avatar" />
-            <strong>Guilherme Santos</strong>
-            <small>FullStack Junior</small>
-          </HeaderRepository>
+        {this.props.repo.data.map(repo => (
+          <Repository key={repo.id}>
+            <HeaderRepository>
+              <img src={repo.avatar_url} alt="Avatar" />
+              <strong>{repo.name}</strong>
+              <small>{repo.bio}</small>
+            </HeaderRepository>
 
-          <ul>
-            <li>
-              Brasil, São José-SC
-              <small> location</small>
-            </li>
-            <li>
-              22
-              <small> public_repos</small>
-            </li>
-            <li>
-              04
-              <small> followers</small>
-            </li>
-            <li>
-              05
-              <small> following</small>
-            </li>
-          </ul>
-        </Repository>
+            <ul>
+              <li>
+                {repo.location}
+                <small> location</small>
+              </li>
+              <li>
+                {repo.public_repos}
+                <small> public_repos</small>
+              </li>
+              <li>
+                {repo.followers}
+                <small> followers</small>
+              </li>
+              <li>
+                {repo.following}
+                <small> following</small>
+              </li>
+            </ul>
+          </Repository>
+        ))}
       </Container>
     );
   }
