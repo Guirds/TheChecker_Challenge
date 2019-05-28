@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
+Criar um site em React, que aborde alguns requisitos:
+- Ter um menu/página público: home, about, sign in, log in. (Não precisa ter conteúdos, pode ser lorem-ipsum);
+- Ter um menu/página privado após logado (dashboard);
+- Criar o layout com foco em CSS;
+- Utilizar Redux;
+- API pode ser um mock das requisições, não precisa salvar em um banco necessariamente.
 
-## Available Scripts
+Resumo: Um site app, com opção pra se cadastrar e depois se logar ao dashboard.
 
-In the project directory, you can run:
+Será avaliado:
+- Estrutura do projeto, como é feito a componentização do mesmo;
+- A utilização do Redux;
+- Layout criado (beleza e código/estrutura do CSS);
+- Versionamento do projeto no GIT (os commits);
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Necessário ter em sua máquina
+<ul>
+  <li><a href="https://nodejs.org/en/">Node.js</a> (versão LTS)</li>
+  <li>Npm (séra instalado junto com o Node.js)</li>
+</ul>
 
-### `npm test`
+## Executando o projeto
+<ul>
+ <li>Clonar o repositório</li>
+ <li>Em seu terminal você deve acessar a pasta do repositório clonado</li>
+ <li>Digitar os comandos: npm install e npm start (após executar o comando npm start, basta esperar alguns minutos e irá abrir uma aba em seu navegador com o projeto sendo executado)</li>
+</ul>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Home 
+![thechecker](https://user-images.githubusercontent.com/37129994/58501318-80d51a00-815a-11e9-8377-48edda2fea46.png)
 
-### `npm run build`
+## Dashboard
+![thechekes](https://user-images.githubusercontent.com/37129994/58501473-e1fced80-815a-11e9-9651-114a6861c52a.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<strong>Obs:</strong>Durante o desafio consegui reforçar ainda mais meus conhecimentos em ReactJs e aprender um pouco mais 
+sobre Redux Saga. 
+O meu objetivo enquanto fazia a aplicação, era fazer uma consulta na API do github com base no nome que seria disponibilizado na tela Home, após feita a consulta o usuário seria redirecionado para o Dashboard, onde teria acesso à informações do usuário como nome, bio, repositórios...
