@@ -1,28 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../services/api';
 
 import {
   Container, CardLogin, Login, Nav,
 } from './styles';
 
-const Home = () => (
-  <>
-    <Container>
-      <Nav>
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Sign in</a>
-        <a href="">Login</a>
-      </Nav>
+export default class Home extends Component {
+  state = {
+    repositoryInput: '',
+    repositories: [],
+  };
 
-      <CardLogin>
-        <Login>
-          <p>Hello, enter your github user</p>
-          <input type="text" placeholder="ex: Guirds" />
-          <button type="submit">Send</button>
-        </Login>
-      </CardLogin>
-    </Container>
-  </>
-);
+  handleAddRepository = async (e) => {
+    e.prevetDefault();
 
-export default Home;
+    try {
+      const { data: repository } = await api.get(`/users/${this.state.repositoryInput}`);
+
+      this.setState({
+        repositoryInput: '',
+        repositories: [...this.state.repositories, repository],
+      });
+    } catch (error) {}
+  };
+
+  render() {
+    return (
+      <>
+        <Container>
+          <Nav>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Sign in</a>
+            <a href="">Login</a>
+          </Nav>
+
+          <CardLogin>
+            <Login onSubmit={this.handleAddRepository}>
+              <p>Hello, enter your github user</p>
+              <input
+                type="text"
+                placeholder="ex: Guirds"
+                value={this.state.repositoryInput}
+                onChange={e => this.setState({ repositoryInput: e.target.value })}
+              />
+              <Link to="/dashboard">
+                {' '}
+                <button type="submit">Send</button>{' '}
+              </Link>
+            </Login>
+          </CardLogin>
+        </Container>
+      </>
+    );
+  }
+}
