@@ -73,7 +73,6 @@ Dashboard.propTypes = {
     }),
   ).isRequired,
 };
-
 const mapStateToProps = state => ({
   repo: state.repository,
 });
