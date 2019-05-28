@@ -26,10 +26,13 @@ export const Repository = styled.div`
     list-style: none;
 
     li {
+      text-align: center;
       padding: 5px;
       border-bottom: 1px solid #37e8a0;
+      font-weight: 700;
 
       &:first-child {
+        font-size: 14px;
         padding-top: 30px;
       }
 
@@ -49,6 +52,7 @@ export const Repository = styled.div`
 export const HeaderRepository = styled.header`
   display: flex;
   flex-direction: column;
+  align-items: center;
   img {
     margin-top: 20px;
     width: 70px;
