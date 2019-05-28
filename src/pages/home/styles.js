@@ -40,49 +40,49 @@ export const CardLogin = styled.div`
   &:hover {
     box-shadow: 0 10px 20px 0 rgb(55, 232, 160);
   }
-`;
 
-export const Login = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
 
-  p {
-    color: #6c757d;
-    font-size: 18px;
-  }
-  input {
-    width: 100px;
-    transition: width 0.35s ease-in-out;
+    p {
+      color: #6c757d;
+      font-size: 18px;
+    }
+    input {
+      width: 100px;
+      transition: width 0.35s ease-in-out;
 
-    &:focus {
-      width: 200px;
+      &:focus {
+        width: 200px;
+      }
+
+      height: 30px;
+      font-size: 16px;
+      border-radius: 5px;
+
+      text-align: center;
+      color: #6c757d;
     }
 
-    height: 30px;
-    font-size: 16px;
-    border-radius: 5px;
+    button {
+      height: 25px;
+      width: 80px;
 
-    text-align: center;
-    color: #6c757d;
-  }
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0px 2px 4px 0 rgb(127, 125, 142);
 
-  button {
-    height: 25px;
-    width: 80px;
+      background: #37e8a0;
+      color: #7f7d8e;
 
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0px 2px 4px 0 rgb(127, 125, 142);
+      transition: width 0.35s ease-in-out;
 
-    background: #37e8a0;
-    color: #7f7d8e;
-
-    transition: width 0.35s ease-in-out;
-
-    &:hover {
-      width: 120px;
+      &:hover {
+        width: 120px;
+      }
     }
   }
 `;

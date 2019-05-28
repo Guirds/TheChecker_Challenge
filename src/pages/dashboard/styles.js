@@ -35,6 +35,7 @@ export const Repository = styled.div`
 
       &:last-child {
         border: 0;
+        padding-bottom: 15px;
       }
 
       small {
