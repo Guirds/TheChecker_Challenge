@@ -10,13 +10,11 @@ import GlobalStyle from './styles/globalStyle';
 import Routes from './routes';
 
 const App = () => (
-  <>
+  <Provider store={store}>
     <BrowserRouter>
-      <Provider store={store}>
-        <GlobalStyle />
-        <Routes />
-      </Provider>
+      <GlobalStyle />
+      <Routes />
     </BrowserRouter>
-  </>
+  </Provider>
 );
 export default App;

@@ -6,13 +6,17 @@ export const Types = {
 };
 
 // Reducers
-const INITIAL_STATE = [];
+const INITIAL_STATE = {
+  data: [],
+  loading: false,
+};
 
 export default function repository(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case Types.ADD_REQUEST:
+      return { ...state, loading: true };
     case Types.ADD_SUCESS:
-      return [...state, action.payload.data];
-
+      return { ...state, loading: false, data: action.payload.data };
     default:
       return state;
   }
@@ -20,10 +24,7 @@ export default function repository(state = INITIAL_STATE, action) {
 
 // Actions
 export const Creators = {
-  addRepositoryRequest: repository => ({
-    type: Types.ADD_REQUEST,
-    payload: { repository },
-  }),
+  addRepositoryRequest: () => ({ type: Types.ADD_REQUEST }),
 
   addRepositorySucess: data => ({
     type: Types.ADD_SUCESS,

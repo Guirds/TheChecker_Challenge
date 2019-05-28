@@ -1,58 +1,50 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../../services/api';
 
-import {
-  Container, CardLogin, Login, Nav,
-} from './styles';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as RepositoryActions } from '../../store/ducks/repository';
 
-export default class Home extends Component {
+import { Container, Nav } from './styles';
+
+class Home extends Component {
   state = {
     repositoryInput: '',
-    repositories: [],
   };
 
-  handleAddRepository = async (e) => {
-    e.prevetDefault();
+  handleAddRepository = (event) => {
+    event.preventDefault();
 
-    try {
-      const { data: repository } = await api.get(`/users/${this.state.repositoryInput}`);
-
-      this.setState({
-        repositoryInput: '',
-        repositories: [...this.state.repositories, repository],
-      });
-    } catch (error) {}
+    this.setState({ repositoryInput: '' });
   };
 
   render() {
     return (
-      <>
-        <Container>
-          <Nav>
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Sign in</a>
-            <a href="">Login</a>
-          </Nav>
+      <Container>
+        <Nav>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Sign in</a>
+          <a href="/">Login</a>
+        </Nav>
 
-          <CardLogin>
-            <Login onSubmit={this.handleAddRepository}>
-              <p>Hello, enter your github user</p>
-              <input
-                type="text"
-                placeholder="ex: Guirds"
-                value={this.state.repositoryInput}
-                onChange={e => this.setState({ repositoryInput: e.target.value })}
-              />
-              <Link to="/dashboard">
-                {' '}
-                <button type="submit">Send</button>{' '}
-              </Link>
-            </Login>
-          </CardLogin>
-        </Container>
-      </>
+        <form onSubmit={this.handleAddRepository}>
+          <p>Hello, enter your github user</p>
+          <input
+            placeholder="ex: Guirds"
+            value={this.state.repositoryInput}
+            onChange={e => this.setState({ repositoryInput: e.target.value })}
+          />
+          <Link href="">
+            {' '}
+            <button type="submit">Send</button>{' '}
+          </Link>
+        </form>
+      </Container>
     );
   }
 }
+
+const mapDispatchToProps = dispatch => bindActionCreators(RepositoryActions, dispatch);
+
+export default connect(mapDispatchToProps)(Home);
