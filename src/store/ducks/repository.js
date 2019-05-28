@@ -10,7 +10,7 @@ const INITIAL_STATE = [];
 
 export default function repository(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case Types.ADD_REQUEST:
+    case Types.ADD_SUCESS:
       return [...state, action.payload.data];
 
     default:
