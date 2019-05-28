@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -23,56 +22,38 @@ class Dashboard extends Component {
           <a href="/">Profile</a>
           <a href="/">Exit</a>
         </Nav>
+
+        <Repository>
+          <HeaderRepository>
+            <img src="https://avatars3.githubusercontent.com/u/37129994?v=4" alt="Avatar" />
+            <strong>Guilherme Santos</strong>
+            <small>FullStack Junior</small>
+          </HeaderRepository>
+
+          <ul>
+            <li>
+              Brasil, São José-SC
+              <small> location</small>
+            </li>
+            <li>
+              22
+              <small> public_repos</small>
+            </li>
+            <li>
+              04
+              <small> followers</small>
+            </li>
+            <li>
+              05
+              <small> following</small>
+            </li>
+          </ul>
+        </Repository>
       </Container>
     );
   }
 }
-/*
-Dashboard.propTypes = {
-  repo: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      avatar_url: PropTypes.string,
-      name: PropTypes.string,
-      bio: PropTypes.string,
-      location: PropTypes.string,
-      public_repos: PropTypes.number,
-      following: PropTypes.number,
-      followers: PropTypes.number,
-    }),
-  ).isRequired,
-};
 
-<Repository>
-          {this.props.repo.data.map(repo => (
-            <>
-              <HeaderRepository key={repo.id}>
-                <img src={repo.avatar_url} alt="Avatar" />
-                <strong>{repo.name}</strong>
-                <small>{repo.bio}</small>
-              </HeaderRepository>
-              <ul>
-                <li>
-                  {repo.location}
-                  <small> localização</small>
-                </li>
-                <li>
-                  {repo.public_repos}
-                  <small> respositorio</small>
-                </li>
-                <li>
-                  {repo.followers}
-                  <small> seguidores</small>
-                </li>
-                <li>
-                  {repo.following}
-                  <small> seguindo</small>
-                </li>
-              </ul>
-            </>
-          ))}
-        </Repository>
-*/
 const mapStateToProps = state => ({
   repo: state.repository,
 });

@@ -35,9 +35,9 @@ class Home extends Component {
             value={this.state.repositoryInput}
             onChange={e => this.setState({ repositoryInput: e.target.value })}
           />
-          <Link href="">
+          <Link to="/dashboard">
             {' '}
-            <button type="submit">Send</button>{' '}
+            <button type="submit">send</button>
           </Link>
         </form>
       </Container>
