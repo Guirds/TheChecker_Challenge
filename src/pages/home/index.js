@@ -36,7 +36,6 @@ class Home extends Component {
             onChange={e => this.setState({ repositoryInput: e.target.value })}
           />
           <Link to="/dashboard">
-            {' '}
             <button type="submit">send</button>
           </Link>
         </form>
@@ -45,6 +44,13 @@ class Home extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  repo: state.repository,
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators(RepositoryActions, dispatch);
 
-export default connect(mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);
