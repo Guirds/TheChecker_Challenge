@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as RepositoryActions } from '../../store/ducks/repository';
@@ -55,6 +57,22 @@ class Dashboard extends Component {
     );
   }
 }
+
+Dashboard.propTypes = {
+  addRepositoryRequest: PropTypes.func.isRequired,
+  repo: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      avatar_url: PropTypes.string,
+      name: PropTypes.string,
+      bio: PropTypes.string,
+      location: PropTypes.string,
+      public_repos: PropTypes.number,
+      followers: PropTypes.number,
+      following: PropTypes.number,
+    }),
+  ).isRequired,
+};
 
 const mapStateToProps = state => ({
   repo: state.repository,
