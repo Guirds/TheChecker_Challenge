@@ -1,17 +1,22 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import './config/ReactotronConfig';
 
 import store from './store';
 
-import Home from './pages/home';
 import GlobalStyle from './styles/globalStyle';
+
+import Routes from './routes';
 
 const App = () => (
   <>
-    <Provider store={store}>
-      <GlobalStyle />
-      <Home />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <GlobalStyle />
+        <Routes />
+      </Provider>
+    </BrowserRouter>
   </>
 );
 export default App;
